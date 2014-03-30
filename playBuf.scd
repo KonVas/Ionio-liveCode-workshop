@@ -1,9 +1,6 @@
 ~b = Buffer.loadDialog(s); //load your own directory of samples
 
-~b.play//see if loaded
-
-// ~b.dict.keys.do(_.postln);
-
+~b.play
 
 (
 SynthDef(\playRate, {|out=0, freq=440, sampFreq=100, gate=1, buf, startPos=0, mix=0.0, room=0.0, maxdel=0.0, deltime=0.0, decay=0.0, amp=0.1|
