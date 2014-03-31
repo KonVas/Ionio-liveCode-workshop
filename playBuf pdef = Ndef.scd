@@ -37,3 +37,15 @@ Pdef(\x,
 Pdef(\x).quant = 0; //:Quantization: 0 = no wait!
 Pdef(\x).play;
 Pdef(\x).stop;
+
+//:to process the synth convert the Pdef to Ndef
+
+Ndef(\x)[0] = Pdef(\x);
+
+Ndef(\x)[1] = \filter -> {|in| AdCVerb.ar(in) * 0.3 }; //:some reverb!
+
+Ndef(\x)[2] = \filter -> {|in| CombN.ar(in, 0.3, 0.3) };
+
+//: to stop an effect make nil!
+//:e.g.
+Ndef(\x)[1] = nil;
