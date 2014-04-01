@@ -1,6 +1,5 @@
 Ionio-liveCode-workshop
 =======================
-Herein you may find some basic examples and ideas to use for live coding with JITLib[1] in SuperCollider[2].
+Herein you may find some basic examples and ideas to use for live coding with JITLib [http://doc.sccode.org/Overviews/JITLib.html], in SuperCollider programming environment [http://supercollider.github.io].
 
-[1] http://doc.sccode.org/Overviews/JITLib.html 
-[2] http://supercollider.github.io
+* For more information about JITLib go to: http://wertlos.org/~rohrhuber/
