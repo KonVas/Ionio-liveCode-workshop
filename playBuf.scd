@@ -1,7 +1,7 @@
 ~b = Buffer.loadDialog(s); //:load your own sample
 
 (
-SynthDef(\playRate, {|out=0, freq=440, sampFreq=100, gate=1, buf, start=0, mix=0.0, room=0.0, maxdel=0.0, deltime=0.0, decay=0.0, amp=0.1|
+SynthDef(\playRate, {|out=0, freq=440, sampFreq=100, buf, start=0, mix=0.0, room=0.0, maxdel=0.0, deltime=0.0, decay=0.0, amp=0.1|
 	var sig, pan, del, rate, startPos;
 	startPos = BufFrames.kr(buf) * start;
 	rate = freq / sampFreq;
