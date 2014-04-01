@@ -38,7 +38,7 @@ Ndef(\varSaw)[0] = {
 	var n = 20;
 		SinOsc.ar({ExpRand(200, 1200)} ! n,
 			0,
-			SinOsc.kr(0.5).range(0, 0.6) * 0.2,
+		SinOsc.kr( rrand(0.5, 1) ).range(0, 0.6) * 0.2,
 	) / n;
 }
 )
