@@ -6,13 +6,12 @@ NdefMixer(s); //:make a GUI
 
 (
 Ndef(\varSaw, {
-	Splay.ar(
-		VarSaw.ar({ExpRand(200, 1200)}!8,
+	var n = 4;
+		VarSaw.ar({ExpRand(200, 1200)} ! n,
 			0,
-			SinOsc.kr(0.2).range(0, 1) * 0.2,
-			0.1)
-	)
-}).play(0, 2)
+			SinOsc.kr(0.2).range(0, 0.6) * 0.2,
+	) / n;
+}).play
 )//:the source
 
 //:add some processing on the top of the source
@@ -32,16 +31,16 @@ Ndef(\varSaw)[1] = nil
 
 
 
-//:you can edit the source without dismissing the filterings !!
+
 (
-Ndef(\varSaw)[0] =
-	{
-	Splay.ar(
-		VarSaw.ar({ExpRand(200, 1200)}!18,
+Ndef(\varSaw)[0] = {
+	//:you can edit the source without dismissing the filterings !!
+	var n = 20;
+		SinOsc.ar({ExpRand(200, 1200)} ! n,
 			0,
-			LFNoise0.kr(0.2).range(0, 1) * 0.2, 0.6)
-	)
-})
+			SinOsc.kr(0.5).range(0, 0.6) * 0.2,
+	) / n;
+}
 )
 
 //:any change you do will be faded in by fadeTime
