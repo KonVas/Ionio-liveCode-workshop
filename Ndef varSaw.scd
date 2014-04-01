@@ -47,4 +47,4 @@ Ndef(\varSaw)[0] =
 //:any change you do will be faded in by fadeTime
 
 
-Ndef(\varSaw).clear(3) //:dismiss with a fade time: (3)
+Ndef(\varSaw).clear(3) //:dismiss with a fade time:(3)
