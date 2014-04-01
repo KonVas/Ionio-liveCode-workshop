@@ -26,12 +26,8 @@ Ndef(\varSaw)[3] = \filter -> {|in| in * SinOsc.ar( rrand(0.7, 11) )}
 
 Ndef(\varSaw)[4] = \filter -> {|in| in * LFPulse.ar( LFNoise1.kr(1).range(1, 10) )}
 
-
-
 //:to suspend make nil, e.g.
 Ndef(\varSaw)[1] = nil
-
-
 
 //:you can edit the source without dismissing the filterings !!
 (
@@ -45,10 +41,5 @@ Ndef(\varSaw)[0] = {
 	)
 }
 )
-
-
-
-//:any change you do will be faded in by fadeTime
-
 
 Ndef(\varSaw).clear(3) //:dismiss with a fade time:(3)
