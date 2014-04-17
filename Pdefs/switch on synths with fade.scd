@@ -4,7 +4,10 @@ p = ProxySpace.push(s.boot);
 
 ~synth.play;
 ~synth.fadeTime = 8;
-~synth = \vint; //:choose manually
+~synth = \grainBuf; //:choose manually but first load the synths below!
+
+//:variate synths through a Tdef
+
 (
 Tdef(\x,{
 	loop{
@@ -28,7 +31,7 @@ SynthDef(\grainBuf, {| buf = 0, out, dens = 10, gate = 1, fadeTime = 8, amp = 0.
 	trig = Dust.ar(dens);
 	OffsetOut.ar(out,
 		Pan2.ar(
-			PlayBuf.ar(buf.numChannels, buf, BufRateScale.kr(buf) * rate, trig, BufFrames.kr(buf) * LFNoise1.kr(1).range(0.1, 1.0) ), pan )
+			PlayBuf.ar(buf.numChannels, buf, BufRateScale.kr(buf) * rate, trig, BufFrames.kr(buf) * MouseX.kr(0.1, 0.99, lag:0.3) ), pan )
 		* EnvGen.kr(Env.asr(fadeTime,1,fadeTime), gate, doneAction:2) * amp;
 	)
 }).add;
