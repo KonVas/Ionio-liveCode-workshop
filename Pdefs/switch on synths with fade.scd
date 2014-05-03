@@ -24,15 +24,15 @@ b = Buffer.readChannel(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav", channe
 b.plot;
 
 (
-SynthDef(\grainBuf, {| buf = 0, out, dens = 10, gate = 1, fadeTime = 8, amp = 0.3, sampFreq = 100 |
+SynthDef(\grainBuf, {| out, dens = 10, gate = 1, fadeTime = 8, amp = 0.3, sampFreq = 100 |
 	var rate, pan, trig;
 	pan = LFNoise1.kr(1).range(-1, 1);
 	rate = \freq.kr(100, 0.3) / sampFreq;
 	trig = Dust.ar(dens);
 	OffsetOut.ar(out,
 		Pan2.ar(
-			PlayBuf.ar(buf.numChannels, buf, BufRateScale.kr(buf) * rate, trig, BufFrames.kr(buf) * MouseX.kr(0.1, 0.99, lag:0.3) ), pan )
-		* EnvGen.kr(Env.asr(fadeTime,1,fadeTime), gate, doneAction:2) * amp;
+			PlayBuf.ar(b.numChannels, b, BufRateScale.kr(b) * rate, trig, BufFrames.kr(b) * MouseX.kr(0.1, 0.99, lag:0.3) ), pan, amp )
+		* EnvGen.kr(Env.asr(fadeTime,1,fadeTime), gate, doneAction:2);
 	)
 }).add;
 
