@@ -20,7 +20,9 @@ Ndef(\playBuf).map(\freq, Ndef(\ctl))
 
 Ndef(\playBuf).unmap(\freq, Ndef(\ctl) );
 
-Ndef(\playBuf)[1] = \filter -> {|in| CombC.ar(in) }
+Ndef(\playBuf)[1..8] = \filter -> {|in| CombC.ar(in) }
 
+Ndef(\playBuf)[9] = \set -> Pbind(\dur, 0.25, \amp, Prand([0.1, 0.3, 0.6], inf), \freq, Prand((220..440), inf))
 
+NdefMixer(s)
 b.free
