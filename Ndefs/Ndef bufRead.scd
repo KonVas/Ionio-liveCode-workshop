@@ -22,13 +22,9 @@ Ndef(\playBuf).unmap(\freq, Ndef(\ctl) );
 
 Ndef(\playBuf)[1..8] = \filter -> {|in| CombC.ar(in) }
 
-Ndef(\playBuf)[1..8] = \filter -> {|in| CombN.ar(in) }
-
-Ndef(\playBuf)[1..8] = \filter -> {|in| PitchShift.ar(in, 0.2, 1, 4.rand) }
-
 Ndef(\playBuf)[9] = \set -> Pbind(\dur, 0.25, \amp, Prand([0.1, 0.3, 0.6], inf), \freq, Prand((220..440), inf))
 
 NdefMixer(s)
 
-Ndef.clear(13)
+Ndef.clear(6)
 b.free
