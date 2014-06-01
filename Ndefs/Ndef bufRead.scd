@@ -28,5 +28,5 @@ Ndef(\playBuf)[9] = \set -> Pbind(\dur, 0.05, \amp, Prand([0.1, 0.3, 0.6], inf),
 
 NdefMixer(s)
 
-Ndef.clear(6)
+Ndef.clear(3)
 b.free
