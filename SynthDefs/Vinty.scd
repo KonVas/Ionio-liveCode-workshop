@@ -26,7 +26,7 @@ Tdef(\scaler, {
 
 //Here using a Pbindef to change only the scale
 
-Pbindef(\x, \dur, Pgeom(0.125, 1.01, inf), \instrument, \vint, \degree, Prand((1..12), inf), \scale, Pfunc{~scale} ).play
+Pbindef(\x, \dur, Pgeom( Pwhite(0.1, 0.3), 1.01, inf), \instrument, \vint, \degree, Prand((1..12), inf), \scale, Pfunc{~scale} ).play
 
 //:
 
