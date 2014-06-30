@@ -26,7 +26,7 @@ x = Synth(\grainBuf, [\buf, b, \rate, 1]); //just for test
 // play with a Pdef
 
 Pdef(\x,
-	Pbind( \dur, Pgbrown(0.03, 0.2),
+	Pbind( \dur, Pgbrown(0.03, 0.125),
 	\instrument, \grainBuf,
 	\buf, b,
 	\freq, Pwhite(0.1, 100.0),
@@ -38,23 +38,20 @@ Pdef(\x,
 
 // play it through an Ndef - and process it more!
 
-Ndef(\x)[0] = Pdef(\x);
-
-Ndef(\x).play;
+Ndef(\play)[0] = Pdef(\x);
+Ndef(\play).fadeTime=2;
+Ndef(\play).play;
 
 //:
 
-Ndef(\x)[1] = \filter -> {|in| SinOsc.ar( { ExpRand(200, 1200) } !8 ) * in }
 
 //:
 
 Ndef(\ctl, { LFNoise1.kr(0.1).range(100, 120)});
 
-Ndef(\x).fadeTime=2
-
 //:
 
-Ndef(\x).unmap(\freq, Ndef(\ctl))
+Ndef(\play).unmap(\freq, Ndef(\ctl))
 
 //:
 
@@ -65,5 +62,4 @@ NdefMixer(s);
 //clean up when done!
 Ndef.clear;
 
-b.free
-
+b.free;
