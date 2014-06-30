@@ -1,5 +1,5 @@
 *** Ionio-liveCode-workshop
 =======================
-* Workshop Material
-* Download SuperCollider (latest stable) http://supercollider.sourceforge.net/downloads/
-* See JITLib: http://doc.sccode.org/Overviews/JITLib.html
+** Workshop Material
+** Download SuperCollider (latest stable) http://supercollider.sourceforge.net/downloads/
+** See JITLib: http://doc.sccode.org/Overviews/JITLib.html
