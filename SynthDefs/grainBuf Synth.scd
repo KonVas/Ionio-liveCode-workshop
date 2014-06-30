@@ -1,37 +1,69 @@
-b = Buffer.read(s, "/Users/KV/Downloads/Sounds/changchang_long1.wav"); // or load yours
-b.plot;
+Server.default.reboot; // run the server in case you haven't.
+
+b = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav"  ); // or load yours
+
+b.plot; //see the content of the buffer.
+
+//:
 
 (
-SynthDef(\grainBuf, {| buf = 0, out, sampFreq = 100 |
+SynthDef(\grainBuf, {| buf = 0, out = 0, sampFreq = 100 |
 	var rate, pan;
-	pan = LFNoise1.kr(1).range(-1, 1);
 	rate = \freq.kr(100, 0.3) / sampFreq;
 	OffsetOut.ar(out,
-		Pan2.ar(
-			PlayBuf.ar( buf.numChannels, buf, rate * BufRateScale.kr(buf), 1, \pos.kr(0.1, 0.3) * BufFrames.kr(buf) ), pan )
+		PlayBuf.ar(1, buf, rate * BufRateScale.kr(buf), 1, \pos.kr(0.1, 0.3) * BufFrames.kr(buf) )
 		* EnvGen.ar( Env.sine(\grainDur.kr(0.1, 0.3)), doneAction:2 )
 	)
 }).add;
 )
 
-x = Synth(\grainBuf, [\buf, b, \rate, 0.1]);//test
+//:
 
-Pbindef(\x, \dur, Pgbrown(0.03, 0.2), \instrument, \grainBuf, \freq, 100, \pos, Pwhite(0.1, 1.0), \grainDur, Pwhite(0.1, 0.3) );
+x = Synth(\grainBuf, [\buf, b, \rate, 1]); //just for test
 
+//:
 
-Ndef(\x)[0] = Pbindef(\x)
+// play with a Pdef
 
-Ndef(\x).play
+Pdef(\x,
+	Pbind( \dur, Pgbrown(0.03, 0.2),
+	\instrument, \grainBuf,
+	\buf, b,
+	\freq, Pwhite(0.1, 100.0),
+	\pos, Pwhite(0.1, 1.0),
+	\grainDur, Pwhite(0.1, 0.3) )
+);
+
+//:
+
+// play it through an Ndef - and process it more!
+
+Ndef(\x)[0] = Pdef(\x);
+
+Ndef(\x).play;
+
+//:
 
 Ndef(\x)[1] = \filter -> {|in| SinOsc.ar( { ExpRand(200, 1200) } !8 ) * in }
 
-Ndef(\ctl, { LFNoise1.kr(0.1).range(100, 120)})
+//:
+
+Ndef(\ctl, { LFNoise1.kr(0.1).range(100, 120)});
 
 Ndef(\x).fadeTime=2
 
+//:
+
 Ndef(\x).unmap(\freq, Ndef(\ctl))
 
-NdefMixer(s)
-Ndef.clear
+//:
+
+NdefMixer(s);
+
+//:
+
+//clean up when done!
+Ndef.clear;
+
 b.free
 
