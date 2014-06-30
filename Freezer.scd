@@ -3,7 +3,7 @@
 // =====================================================================
 
 /*
-Freeze some input, use another Ndef from the examples and pass it through this Freezer effect
+Freeze some input, use another Ndef from the examples and pass it through this Freezer effect, this example is using the play ndef from grainBuf synth example inside Synth folder.
 */
 
 //:
