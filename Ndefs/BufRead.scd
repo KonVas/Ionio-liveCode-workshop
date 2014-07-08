@@ -1,7 +1,9 @@
-b = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01-44_1.aiff");
+b = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01-44_1.aiff");// or load yours.
+
 (
 Ndef(\playBuf, {| amp = 0.1 |
-	BufRd.ar(b.numChannels, b, Phasor.ar(1, \freq.kr(1, 0.3), 0, BufFrames.kr(b) ) ).dup
+	BufRd.ar(b.numChannels, b, 
+		Phasor.ar(1, \freq.kr(1, 0.3), 0, BufFrames.kr(b) ) ).dup
 	* amp
 }).play;
 )
@@ -24,7 +26,14 @@ Ndef(\playBuf).unmap(\freq, Ndef(\ctl) );
 
 Ndef(\playBuf)[1..8] = \filter -> {|in| CombC.ar(in) }
 
-Ndef(\playBuf)[9] = \set -> Pbind(\dur, 0.05, \amp, Prand([0.1, 0.3, 0.6], inf), \freq, Prand((0.1..1), inf))
+Ndef(\playBuf)[1..8] = nil // turn of the effects.
+
+(
+Ndef(\playBuf)[9] = \set ->
+Pbind(\dur, Pgeom( 1.0, 1.1,  inf),
+	\freq, Pfunc{ Pbrown( 0.1, 1.0, 0.1,  inf) * 6.rand + 3.rand }
+ )
+)
 
 NdefMixer(s)
 
