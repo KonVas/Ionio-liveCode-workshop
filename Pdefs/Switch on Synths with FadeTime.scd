@@ -4,7 +4,7 @@ p = ProxySpace.push(s.boot);
 
 ~synth.play;
 ~synth.fadeTime = 8;
-~synth = \grainBuf; //:choose manually but first load the synths below!
+~synth = \grainBuf; //:choose manually or via a collection. 
 
 
 //:variate synths through a Tdef
