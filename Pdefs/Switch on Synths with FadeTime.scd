@@ -1,4 +1,4 @@
-/* switch between different synths using fade time */
+/* switch between different synths using fade time, for this example we will use ProxySpace, see helpfile! */
 
 p = ProxySpace.push(s.boot);
 
@@ -16,6 +16,8 @@ Tdef(\x,{
 	}
 }).play
 )
+
+//:
 Tdef(\x).stop
 
 //:load a sound
@@ -23,7 +25,8 @@ b = Buffer.readChannel(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav", channe
 //:test
 b.plot;
 
-(
+//:
+
 SynthDef(\grainBuf, {| out, dens = 10, gate = 1, fadeTime = 8, amp = 0.3, sampFreq = 100 |
 	var rate, pan, trig;
 	pan = LFNoise1.kr(1).range(-1, 1);
@@ -56,7 +59,8 @@ SynthDef(\grainSin, {|out, fadeTime = 8, gate = 1, dens = 10, grainDur = 0.3, am
 	EnvGen.kr(Env.asr(fadeTime,1,fadeTime), gate, doneAction:2);
 	OffsetOut.ar(out, sig * amp);
 }).add
-)
+
+//:
 
 ~synth.stop(3);
 //:clean up
