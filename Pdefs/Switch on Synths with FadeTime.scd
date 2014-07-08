@@ -6,21 +6,24 @@ p = ProxySpace.push(s.boot);
 ~synth.fadeTime = 8;
 ~synth = \grainBuf; //:choose manually but first load the synths below!
 
+
 //:variate synths through a Tdef
 
-(
 Tdef(\x,{
+	var time;
 	loop{
-		6.wait;
+		time = rrand(0.3, 10.0);
+		~synth.fadeTime = time;
 		~synth = [\grainSin, \vint, \grainBuf].choose;
+		( "will fade in: " ++ ~synth.at(0)  ++ " fadeTime: " ++ time.round ++ " secs" ).postln;
+		0.5.rand + time.wait;
+
 	}
 }).play
-)
 
 //:
-Tdef(\x).stop
 
-//:load a sound
+
 b = Buffer.readChannel(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav", channels: [0] );
 //:test
 b.plot;
@@ -41,10 +44,8 @@ SynthDef(\grainBuf, {| out, dens = 10, gate = 1, fadeTime = 8, amp = 0.3, sampFr
 
 
 SynthDef(\vint, {| gate = 1, amp = 0.1, out, fadeTime = 8 |
-	var freq;
-	freq = {ExpRand(200, 1200)}!8;
 	a = SinOsc.ar(0.1).range(0.1, 0.6);
-	c = Splay.ar( VarSaw.ar( freq, mul:a ) )
+	c = Splay.ar( SinOsc.ar( {ExpRand(220, 1220.0)}!18, mul:a )  )
 	* EnvGen.kr(Env.asr(fadeTime,1,fadeTime), gate, doneAction:2);
 	Out.ar(out, c * amp);
 }).add;
