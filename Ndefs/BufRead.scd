@@ -24,7 +24,7 @@ Ndef(\playBuf).map(\freq, Ndef(\ctl))
 
 Ndef(\playBuf).unmap(\freq, Ndef(\ctl) );
 
-Ndef(\playBuf)[1..8] = \filter -> {|in| CombC.ar(in) }
+Ndef(\playBuf)[1..4] = \filter -> {|in| CombC.ar(in, 0.3.rand, 0.3.rand) }
 
 Ndef(\playBuf)[1..8] = nil // turn of the effects.
 
@@ -37,5 +37,6 @@ Pbind(\dur, Pgeom( 1.0, 1.1,  inf),
 
 NdefMixer(s)
 
+//be tidy, cleap up!
 Ndef.clear(3)
 b.free
