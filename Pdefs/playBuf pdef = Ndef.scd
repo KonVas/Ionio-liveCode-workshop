@@ -1,6 +1,7 @@
-~b = Buffer.loadDialog(s); //:load a sample
+b = Buffer.loadDialog(s); //:load a sample
+b.plot // see what's loaded
 
-(
+//:
 SynthDef(\playRate, {|out=0, freq=440, sampFreq=100, buf, start=0, mix=0.0, room=0.0, maxdel=0.0, deltime=0.0, decay=0.0, amp=0.5|
 	var sig, pan, del, rate, startPos;
 	startPos = BufFrames.kr(buf) * start;
@@ -17,4 +18,13 @@ SynthDef(\playRate, {|out=0, freq=440, sampFreq=100, buf, start=0, mix=0.0, room
 		Rotate2.ar(sig, del, pan)
 	)
 }).add;//:a synth to play samples
-)
+
+//:
+
+x = Synth(\playRate, [ \buf, b])//test it!
+
+Pdef(\x, Pbind(\dur, 0.125, \instrument, \playRate, \buf, b, \freq, Pwhite(120, 1200))); //do *not* make Pdef play!
+
+Ndef(\x)[0] = Pdef(\x); // pass it through an Ndef!
+
+Ndef(\x).play // and now play it.

@@ -1,10 +1,11 @@
 //:assign to synth
-~synth = \grainBuf;
 
-~synth.fadeTime = 3;
+~synth = 'grainSin';
+
+~synth.fadeTime = 3;//fade is currently broken.
 
 //:make scale
-~scale = Scale.ionian
+~scale = Scale.phrygian;
 
 ~detune = [20, 50, 80];
 
@@ -12,7 +13,8 @@
 b = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav"); // or load yours
 b.plot;
 
-(
+//:
+
 SynthDef(\grainBuf, {| buf = 0, out = 0, gate = 1, amp = 0.3, release = 0.2, sampFreq = 100 |
 	var rate, pan, dev;
 	pan = LFNoise1.kr(1).range(-1, 1);
@@ -36,11 +38,11 @@ SynthDef(\grainSin, {|out = 0, gate = 1, grainDur=0.1, amp=0.3, release = 0.2, f
 	sig = GrainSin.ar(2, 1, grainDur, freq * WhiteNoise.kr(freqDev, 1), pan, -1) *
 	EnvGen.ar(Env.asr(releaseTime:release), gate, doneAction:2);
 	OffsetOut.ar(out, sig * amp);
-}).add
-)
+}).add;
 
-(
-Pbindef(\x, \dur, Pbrown(0.03, 0.08), \instrument, Pfunc({ ~synth }, inf), \degree, 1,
+
+//:
+
+Pbindef(\x, \dur, Pbrown(0.03, 0.3), \instrument, Pfunc({ ~synth }, inf), \degree, Prand((1..8), inf),
 	\scale, Pfunc({ ~scale },inf), \amp, 0.1, \release, 0.1, \buf, b, \freqDev, 0.5, \detune, Pfunc{ ~detune }).play;
-);
-)
+
