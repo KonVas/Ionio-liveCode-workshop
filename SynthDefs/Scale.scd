@@ -1,5 +1,5 @@
 /*
-Use Scale to control a SynthDef
+Use Scale to control a SynthDef, see Scale help file
 
 Sat Jul 12 17:59:59 EEST 2014
 */
