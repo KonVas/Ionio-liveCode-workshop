@@ -23,7 +23,8 @@ x = Synth(\grainBuf, [\buf, b, \rate, 1]); //just for test
 
 //:
 
-// play with a Pdef
+// play it with an Ndef
+
 
 Pdef(\x,
 	Pbind( \dur, Pgbrown(0.03, 0.125),
@@ -36,7 +37,6 @@ Pdef(\x,
 
 //:
 
-// play it through an Ndef - and process it more!
 
 Ndef(\play)[0] = Pdef(\x);
 Ndef(\play).fadeTime=2;
