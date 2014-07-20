@@ -66,6 +66,11 @@ NdefMixer(s);
 Ndef(\play)[1] = \filter -> {|in| GVerb.ar(in)  }
 
 //clean up when done!
+
+//:
+
 Ndef.clear;
 
 b.free;
+
+//:
