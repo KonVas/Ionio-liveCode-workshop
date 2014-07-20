@@ -1,5 +1,7 @@
 Server.default.reboot; // run the server in case you haven't.
 
+//:
+
 b = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav"  ); // or load yours
 
 b.plot; //see the content of the buffer.
@@ -47,7 +49,9 @@ Ndef(\play).play;
 
 //:
 
-Ndef(\ctl, { LFNoise1.kr(0.1).range(100, 120)});
+Ndef(\ctl, { LFNoise1.kr(10).range(100, 1200.0)});
+
+Ndef(\play).map(\freq, Ndef(\ctl))
 
 //:
 
@@ -58,6 +62,8 @@ Ndef(\play).unmap(\freq, Ndef(\ctl))
 NdefMixer(s);
 
 //:
+
+Ndef(\play)[1] = \filter -> {|in| GVerb.ar(in)  }
 
 //clean up when done!
 Ndef.clear;
