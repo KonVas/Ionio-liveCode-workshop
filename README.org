@@ -1,6 +1,6 @@
 *** Ionio-liveCode-workshop
 
-Here in you may find some generic code snippets using the Just In Time library for SuperCollider.
+Here in you may find some generic code snippets using the Just In Time library for SuperCollider. Most likely, these examples can be used for live coding, or any other improvisational context using code.
 **** Workshop Material
 - Download SuperCollider (latest stable) http://supercollider.sourceforge.net/downloads/
 - See JITLib: http://doc.sccode.org/Overviews/JITLib.html
