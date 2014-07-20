@@ -1,4 +1,4 @@
-*** Ionio-liveCode-workshop
+*** Ionio University liveCode workshop
 
 Here in you may find some generic code snippets using the Just In Time library for SuperCollider. Most likely, these examples can be used for live coding, or any other improvisational context using code.
 **** Workshop Material
