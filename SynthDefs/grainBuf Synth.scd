@@ -4,7 +4,7 @@ Server.default.reboot; // run the server in case you haven't.
 
 b = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav"  ); // or load yours
 
-b.plot; //see the content of the buffer.
+b.plot; //see what's in the buffer.
 
 //:
 
@@ -26,7 +26,6 @@ x = Synth(\grainBuf, [\buf, b]); //just for test
 //:
 
 // play it with an Ndef, do not .play the Pdef
-
 
 Pdef(\x,
 	Pbind( \dur, Pgbrown(0.03, 0.125),
