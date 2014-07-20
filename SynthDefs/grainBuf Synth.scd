@@ -21,11 +21,11 @@ SynthDef(\grainBuf, {| buf = 0, out = 0, sampFreq = 100 |
 
 //:
 
-x = Synth(\grainBuf, [\buf, b, \rate, 1]); //just for test
+x = Synth(\grainBuf, [\buf, b]); //just for test
 
 //:
 
-// play it with an Ndef
+// play it with an Ndef, do not .play the Pdef
 
 
 Pdef(\x,
@@ -39,13 +39,13 @@ Pdef(\x,
 
 //:
 
+/*
+play the Ndef instead, bear in mind, in order to do the following, your SynthDef has to have an 'out' argument, otherwise it won't work!
+*/
 
-Ndef(\play)[0] = Pdef(\x);
+Ndef(\play)[0] = Pdef(\x); //Ndef's source is the Pdef. [0] is the source.
 Ndef(\play).fadeTime=2;
 Ndef(\play).play;
-
-//:
-
 
 //:
 
@@ -55,7 +55,7 @@ Ndef(\play).map(\freq, Ndef(\ctl))
 
 //:
 
-Ndef(\play).unmap(\freq, Ndef(\ctl))
+Ndef(\play).unmap(\freq, Ndef(\ctl));
 
 //:
 
@@ -63,14 +63,14 @@ NdefMixer(s);
 
 //:
 
-Ndef(\play)[1] = \filter -> {|in| GVerb.ar(in)  }
-
-//clean up when done!
+Ndef(\play)[1] = \filter -> {|in| GVerb.ar(in)  }// pass through an effect this way.
 
 //:
 
-Ndef.clear;
+Ndef.clear(3);//clear the Ndef gradually
+
+//:
+
+//be tidy, clean up.
 
 b.free;
-
-//:
