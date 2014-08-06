@@ -4,6 +4,7 @@ Server.default.reboot; // run the server in case you haven't.
 
 b = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav"  ); // or load yours
 
+
 b.plot; //see what's in the buffer.
 
 //:
@@ -11,9 +12,13 @@ b.plot; //see what's in the buffer.
 (
 SynthDef(\grainBuf, {| buf = 0, out = 0, sampFreq = 100 |
 	var rate, pan;
+	pan = LFNoise1.kr(1).range(-1, 1.0);
 	rate = \freq.kr(100, 0.3) / sampFreq;
 	OffsetOut.ar(out,
-		PlayBuf.ar(1, buf, rate * BufRateScale.kr(buf), 1, \pos.kr(0.1, 0.3) * BufFrames.kr(buf) )
+		Pan2.ar(
+		PlayBuf.ar(1, buf, rate * BufRateScale.kr(buf), 1, \pos.kr(0.1, 0.3) * BufFrames.kr(buf) ), 
+			pan
+		)
 		* EnvGen.ar( Env.sine(\grainDur.kr(0.1, 0.3)), doneAction:2 )
 	)
 }).add;
