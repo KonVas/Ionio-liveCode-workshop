@@ -6,7 +6,7 @@ Ndef(\playBuf, {| amp = 0.1 |
 		Phasor.ar(1, \freq.kr(1, 0.3), 0, BufFrames.kr(b) ) ).dup
 	* amp
 }).play;
-)
+);
 //:replace the source
 (
 	Ndef(\playBuf)[0] = ({| amp = 0.1 |
