@@ -21,9 +21,6 @@ Ndef(\ctl).fadeTime = 2;
 Ndef(\ctl, {LFNoise0.kr(1).exprange(1.0, 100.0) });
 Ndef(\playBuf).map(\rate, Ndef(\ctl));
 Ndef(\playBuf).unmap(\rate, Ndef(\ctl) );
-Ndef(\playBuf)[1..4] = \filter -> {|in| CombC.ar(in, 0.3.rand, 0.3.rand) }
-
-Ndef(\playBuf)[1..4] = nil // turn of the effects.
 
 Ndef(\playBuf)[1] = \set -> Pbind(\dur, Pgeom(0.25, 1, inf), \rate, Pstutter(4, Pxrand((1..100).midicps, inf)) ).trace;
 
