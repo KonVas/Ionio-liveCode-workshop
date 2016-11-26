@@ -30,6 +30,8 @@ Ndef(\x, {LFSaw.ar([\freq.kr(120.0), \freq.kr + 2.01]) / 2 * Linen.kr(Impulse.kr
 NdefMixer(s);
 #+END_SRC
 
+*** For other conveniences see this repository and the JITLib Overview help file in SuperCollider
+
 **** Resources and acknowledgements
 + Download SuperCollider (latest stable) [[http://supercollider.github.io][here]].
 + [[http://doc.sccode.org/Overviews/JITLib.html][JITLib]] mainly created by Julian Rohrhuber, with contributions by Alberto De Campo.
