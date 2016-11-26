@@ -1,4 +1,4 @@
-*** Live Coding in SuperCollider
+* Live Coding in SuperCollider
 Creating sound with SuperCollider can be very rewarding using its
 ready made unit generators to build novel instruments and sound
 generators, but what happens when one wants to improvise the structure
