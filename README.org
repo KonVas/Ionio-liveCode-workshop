@@ -1,8 +1,24 @@
-*** Ionio University liveCode workshop
-Creating sound with SuperCollider can be very rewarding using its ready made unit generators to build novel instruments and sound generators,
-but what happens when one wants to improvise the structure of these instruments and change them on the fly. For this practice, commonly known as live coding (in music, and digital arts) we will use a library which allows the user to interact and interfere without having to stop and update the synthesis processes while at run. Examples made in SuperCollider, can be found at this repository. For more information about live coding as performance paradigm see this [[http://toplap.org][page]].
+*** Live Coding in SuperCollider
+Creating sound with SuperCollider can be very rewarding using its
+ready made unit generators to build novel instruments and sound
+generators, but what happens when one wants to improvise the structure
+of these instruments and change them on the fly.
+
+** Live coding as a musical performance paradigm
+Dynamic or interactive programming, commonly known as live
+coding (in electronic music, and digital arts) is a performance
+paradigm that allows the performer(s) to create an instrument instead
+of interacting with it by altering its control inputs or parameters.  For
+this we will use JITLib shipped in SuperCollider optimised for just in
+time programming techniques, which allows the user to interact and
+interfere without having to stop and update the synthesis processes
+while at run. This allows the performer to improvise and change the
+state of the sound manipulation dynamically, expanding the interaction
+affordances of the software in real time. Examples made in
+SuperCollider, can be found at this repository. For more information
+about live coding as performance paradigm see this [[http://toplap.org][page]].
 
 **** Resources and acknowledgements
-- Download SuperCollider (latest stable) http://supercollider.sourceforge.net/downloads/
-- See JITLib: http://doc.sccode.org/Overviews/JITLib.html
-****** Credits: http://wertlos.org/~rohrhuber/
++ Download SuperCollider (latest stable) [[http://supercollider.github.io][here]].
++ [[http://doc.sccode.org/Overviews/JITLib.html][JITLib]] mainly created by Julian Rohrhuber, with contributions by Alberto De Campo.
++ [[http://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.682112][Chapter]] on live Coding of my PhD thesis including historical and recent practices (groups, software, etc.).
