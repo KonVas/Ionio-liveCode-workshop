@@ -1,7 +1,8 @@
 *** Ionio University liveCode workshop
+Creating sound with SuperCollider can be very rewarding using its ready made unit generators to build novel instruments and sound generators,
+but what happens when one wants to improvise the structure of these instruments and change them on the fly. For this practice, commonly known as live coding (in music, and digital arts) we will use a library which allows the user to interact and interfere without having to stop and update the synthesis processes while at run. Examples made in SuperCollider, can be found at this repository. For more information about live coding as performance paradigm see this [[http://toplap.org][page]].
 
-Here in you may find some generic code snippets using the Just In Time library for SuperCollider. Most likely, these examples can be used for live coding, or any other improvisational context using code.
-**** Workshop Material
+**** Resources and acknowledgements
 - Download SuperCollider (latest stable) http://supercollider.sourceforge.net/downloads/
 - See JITLib: http://doc.sccode.org/Overviews/JITLib.html
 ****** Credits: http://wertlos.org/~rohrhuber/
