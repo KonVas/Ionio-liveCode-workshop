@@ -1,7 +1,7 @@
 (
 Ndef(\source, { | pul = 8 |
 	Impulse.ar(pul)
-}).play(0, 2)
+}).play(0, 2, vol:0.2)
 )
 
 //:mix things up

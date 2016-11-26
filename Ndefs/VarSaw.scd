@@ -1,6 +1,6 @@
 // Use at your own risk, always take care of the VOLUME!!!!!!!
 
-s.boot;//Boot the Server to start sound.
+s.reboot;//Boot the Server to start sound.
 s.meter; //Show server audio output meters.
 
 Ndef(\source).fadeTime = 3; //: first do this, you can change later to any fadeTime you want.
@@ -28,17 +28,13 @@ Ndef(\source)[3] = \filter -> {|in| in * SinOsc.ar( rrand(0.7, 11) )}
 
 Ndef(\source)[4] = \filter -> {|in| in * LFPulse.ar( LFNoise1.kr(1).range(1, 10) )}
 
-
-
 //:to suspend an effect make nil, use the number of the effect, e.g.
-Ndef(\source)[1] = nil
+Ndef(\source)[4] = nil
 
-
-
+//:you can edit the source without dismissing the effects!!
 
 (
 Ndef(\source)[0] = {
-	//:you can edit the source without dismissing the effects!!
 	var n = 20;
 		SinOsc.ar({ExpRand(200, 1200)} ! n,
 			0,
@@ -48,6 +44,4 @@ Ndef(\source)[0] = {
 )
 
 //:any change you do will be faded in by fadeTime
-
-
 Ndef(\source).clear(3) //:dismiss with a fade time:(3)

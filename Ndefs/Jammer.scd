@@ -1,10 +1,10 @@
-~speed = 8
+~speed = 8;
 
 Ndef(\crack,  { | in | Crackle.ar( LFNoise0.kr(~speed).range(0.1, 1.75), 0.1, 0.1 )  }).play
 
 Ndef(\source, { Dust.ar( 1.75.dup ) }).play
 
-Ndef(\beat, { Impulse.ar([1, ~speed]) * 0.8 }).play(0,2)
+Ndef(\beat, { Impulse.ar([1, ~speed]) * 0.5 }).play(0,2)
 
 
 (
@@ -35,12 +35,14 @@ Ndef(\pad).fadeTime = 2;
 
 Ndef(\pad, { Resonz.ar( WhiteNoise.ar(0.3.dup, 0.5, 0.5), {ExpRand(220, 1220)}!8, 0.9.rand.max(0.1), mul:0.1) });
 
+(
 Tdef(\padTask, {
 	loop{
 		Ndef(\pad)[0] = { Resonz.ar( WhiteNoise.ar(0.3.dup, 0.5, 0.5), {ExpRand(220, 1220)}!8, 0.9.rand.max(0.1), mul:0.1) };
 		3.wait
 }
 }).play
+)
 
 Ndef(\pad)[1] = \filter -> { |in| CombC.ar( CombC.ar( in, 0.6, 0.6 ), 0.02, 0.03 )}
 
@@ -52,4 +54,4 @@ Tdef(\padTask).play
 Tdef(\padTask).stop
 
 NdefMixer(s)
-Ndef.clear(3)
+Ndef.clear(8);
