@@ -7,7 +7,7 @@ of these instruments and change them on the fly.
 ** Live coding as a musical performance paradigm
 Dynamic or interactive programming, commonly known as live
 coding (in electronic music, and digital arts) is a performance
-paradigm that allows the performer(s) to create an instrument instead
+paradigm that allows the performer(s) to create an instrument on the fly instead
 of interacting with it by altering its control inputs or parameters.  For
 this we will use JITLib shipped in SuperCollider optimised for just in
 time programming techniques, which allows the user to interact and
@@ -29,7 +29,7 @@ Ndef(\x, {LFSaw.ar([\freq.kr(120.0), \freq.kr + 2.01]) / 2 * Linen.kr(Impulse.kr
 // Make an Ndef mixer to control the node definitions via a GUI
 NdefMixer(s);
 #+END_SRC
-/The most interesting thing in JITlib is that things do not have to exist as long as you create them later!/
+/The most interesting thing in JITlib is that one can call things that do not exist as long as they are created later!/
 **** For other conveniences see this repository and the JITLib Overview help file in SuperCollider
 
 **** Resources and acknowledgements
