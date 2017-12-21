@@ -2,10 +2,16 @@ Server.default.boot; // run the server in case you havent!
 
 //:
 
+(
 SynthDef(\vint, {| freq = 440, out = 0 |
-	c = VarSaw.ar(freq) * EnvGen.kr(Env.perc(0.03, 0.25), doneAction: 2);
-	Out.ar(out, c.dup * 0.25);
+	var sig, env;
+	env = EnvGen.kr(Env.perc(\attack.kr(0.03, 0.3), \release.kr(0.5, 0.3)), doneAction: 2);
+	sig = VarSaw.ar(freq) * EnvGen.kr(Env.perc(0.03, 0.25), doneAction: 2);
+	sig = sig * env * \amp.kr(0.2, 0.3);
+    sig = Pan2.ar(sig, LFNoise1.kr(1).range(-1,1));
+	Out.ar(out, sig.dup * 0.25);
 }).add;
+)
 
 //:
 
