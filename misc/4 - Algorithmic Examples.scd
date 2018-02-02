@@ -39,7 +39,7 @@ Pbind(
 	\instrument, \blippy,
 	\freq, Prand([1, 1.2, 2, 2.5, 3, 4], inf) * 200, // use freq instead of degree
 	\nharms, Pseq([4, 10, 40], inf),
-	\dur, 0.1
+	\dur, 0.15
 ).play;
 )
 
