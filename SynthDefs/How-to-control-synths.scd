@@ -1,6 +1,6 @@
-//SynthDefs, sound engine of our program. 
+//SynthDefs, sound engines of our programs. 
 
-s.boot;//First load the server...
+s.boot;//First boot the server...
 
 //functions inside synthdefs
 x = {|amp = 0.6| 
