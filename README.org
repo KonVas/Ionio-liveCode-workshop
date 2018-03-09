@@ -27,6 +27,6 @@ NdefMixer(s);
 **** For other conveniences see this repository and the JITLib Overview help file in SuperCollider
 
 **** Resources and acknowledgements
-+ Download SuperCollider (latest stable) [[http://supercollider.github.io][here]].
++ Download SuperCollider [[http://supercollider.github.io][(latest stable version here)]].
 + [[http://doc.sccode.org/Overviews/JITLib.html][JITLib]] mainly created by Julian Rohrhuber, with contributions by Alberto De Campo.
 + [[http://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.682112][Chapter]] on live Coding from my PhD thesis including historical and recent practices (groups, software, etc.).
