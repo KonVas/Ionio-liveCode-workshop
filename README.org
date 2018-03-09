@@ -31,7 +31,7 @@ NdefMixer(s);
 + [[http://doc.sccode.org/Overviews/JITLib.html][JITLib]] mainly created by Julian Rohrhuber, with contributions by Alberto De Campo.
 + [[http://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.682112][Chapter]] on live Coding from my PhD thesis including historical and recent practices (groups, software, etc.).
 + Collective live coding and networked music performance.
-  + Birmingham Ensemble for Electroacoustic Music.
-  + Cybernetic Orchestra
-  + PowerBooks Unplugged
-  + Benoit and the Mandelbrots
+  + Birmingham Ensemble for Electroacoustic Music [[https://soundcloud.com/beer-ensemble][listen here]]
+  + Cybernetic Orchestra [[https://soundcloud.com/cyberneticorchestra][listen here]]
+  + PowerBooks Unplugged [[https://vimeo.com/68073332][watch here]]
+  + Benoit and the Mandelbrots [[https://www.youtube.com/results?search_query=benoit+and+mandelbrots][watch here]]
