@@ -8,7 +8,7 @@ of these instruments and change them on the fly.
 Dynamic or interactive programming, commonly known as live coding (in electronic
 music, and digital arts) is a performance paradigm that allows the performer(s)
 to create an instrument on the fly instead of interacting with it by altering
-its control inputs or parameters. Examples and recipes for live coding in SuperCollider, can be found
+its control inputs or parameters. That is, to improvise an algorithm and change its state while at run. Examples and recipes for live coding in SuperCollider, can be found
 at this repository (always take care of the volume while changing the algorithms in real time). For more information about live coding as performance
 paradigm see this [[http://toplap.org][Toplap, the home of live coding]].
 ** Examples:
