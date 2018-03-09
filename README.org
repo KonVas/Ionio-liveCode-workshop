@@ -35,3 +35,4 @@ NdefMixer(s);
   + Cybernetic Orchestra [[https://soundcloud.com/cyberneticorchestra][listen here]]
   + PowerBooks Unplugged [[https://vimeo.com/68073332][watch here]]
   + Benoit and the Mandelbrots [[https://www.youtube.com/results?search_query=benoit+and+mandelbrots][watch here]]
++ Utopia, a system to communicate via ad-hoc network [[https://github.com/muellmusik/Utopia][download here]]
