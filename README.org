@@ -8,13 +8,12 @@ of these instruments and change them on the fly.
 Dynamic or interactive programming, commonly known as live coding (in electronic
 music, and digital arts) is a performance paradigm that allows the performer(s)
 to create an instrument on the fly instead of interacting with it by altering
-its control inputs or parameters. Examples made in SuperCollider, can be found
-at this repository (always pay attention to volume while interacting with the
-running processes). For more information about live coding as performance
-paradigm see this [[http://toplap.org][page]].
+its control inputs or parameters. Examples and recipes for live coding in SuperCollider, can be found
+at this repository (always take care of the volume while changing the algorithms in real time). For more information about live coding as performance
+paradigm see this [[http://toplap.org][Toplap, the home of live coding]].
 ** Examples:
 Define an Ndef, a synthesis proxy!
-#+BEGIN_SRC sclang
+#+BEGIN_SRC ruby
 Ndef(\x).fadeTime = 2;
 Ndef(\x).play;
 Ndef(\x, {SinOsc.ar(\freq.kr(120.0, 0.3)) * 0.1 });
