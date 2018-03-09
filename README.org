@@ -30,3 +30,8 @@ NdefMixer(s);
 + Download SuperCollider [[http://supercollider.github.io][(latest stable version here)]].
 + [[http://doc.sccode.org/Overviews/JITLib.html][JITLib]] mainly created by Julian Rohrhuber, with contributions by Alberto De Campo.
 + [[http://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.682112][Chapter]] on live Coding from my PhD thesis including historical and recent practices (groups, software, etc.).
++ Collective live coding and networked music performance.
+  + Birmingham Ensemble for Electroacoustic Music.
+  + Cybernetic Orchestra
+  + PowerBooks Unplugged
+  + Benoit and the Mandelbrots
