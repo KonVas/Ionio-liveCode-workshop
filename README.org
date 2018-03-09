@@ -13,7 +13,7 @@ at this repository (always take care of the volume while changing the algorithms
 paradigm see this [[http://toplap.org][Toplap, the home of live coding]].
 ** Examples:
 Define an Ndef, a synthesis proxy!
-#+BEGIN_SRC ruby
+#+BEGIN_SRC supercollider
 Ndef(\x).fadeTime = 2;
 Ndef(\x).play;
 Ndef(\x, {SinOsc.ar(\freq.kr(120.0, 0.3)) * 0.1 });
