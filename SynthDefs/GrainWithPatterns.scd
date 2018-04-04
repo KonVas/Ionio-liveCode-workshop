@@ -8,9 +8,12 @@ t = TempoClock.new; //master clock for Pbindefs
 t.tempo = 1.0; //change the tempo of the clock using a slider.
 
 (
-~slider = Slider(nil, 120@800).front;
+w = Window.new("TempoSlider", 120@600).front;
+~slider = EZSlider(w, w.view.bounds);
 ~slider.action_({|sl|
+	if(t.notNil{
 	t.tempo = sl.value.round(0.01).postln * 2 + 10
+	});
 });
 )
 
