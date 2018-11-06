@@ -9,17 +9,12 @@ of these instruments and change them on the fly.
 
 Dynamic or interactive programming, commonly known as live coding (in electronic
 music, and digital arts) is a performance paradigm that allows the performer(s)
-to create an instrument on the fly instead of interacting with it by altering
-its control inputs or parameters. For this we will use JITLib shipped in
-SuperCollider optimized for _just in time_ programming, which allows
-the user to interact and interfere to the musical output without having to stop and update the synthesis processes while at run. This allows the performer to improvise and
-change the state of the sound manipulation dynamically, expanding the
-interaction affordances of the software in real time. For the workshop we will
-use the SuperCollider language, a state of the art sound synthesis environment
-for the development of music software and interactive applications. Examples
-made in SuperCollider, can be found at this repository (always pay
-attention to volume while interacting with the running processes). For more
-information about live coding as performance paradigm see this [[http://toplap.org][page]].
+to change the state of the program and thus expand it on the fly.
+
+For this we will use JITLib shipped in SC optimized for _just in time_ programming, which allows the user to interact and interfere to the musical output without having to stop and update the synthesis processes while at run. This allows the performer to improvise and change the state of the sound manipulation dynamically, expanding the
+interaction affordances of the software in real time.
+
+For the workshop we will use examples made in SuperCollider and JITLib, which can be found at this repository (always pay attention to volume while interacting with the running processes). For more information about live coding as performance paradigm see this [[http://toplap.org][page]].
 
 ## Examples:
 Define an Ndef, a synthesis proxy!
