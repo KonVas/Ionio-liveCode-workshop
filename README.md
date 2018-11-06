@@ -24,7 +24,7 @@ information about live coding as performance paradigm see this [[http://toplap.o
 ## Examples:
 Define an Ndef, a synthesis proxy!
 
-`
+``` js
 Ndef(\x).fadeTime = 2;
 
 Ndef(\x).play;
@@ -40,7 +40,7 @@ Ndef(\x, {LFSaw.ar([\freq.kr(120.0), \freq.kr + 2.01]) / 2 * Linen.kr(Impulse.kr
 // Make an Ndef mixer to control the node definitions via a GUI
 
 NdefMixer(s);
-`
+```
 
 The most interesting thing in JITlib is that one can call things that do not exist as long as they are created later!/
 #### For other conveniences see this repository and the JITLib Overview help file in SuperCollider
