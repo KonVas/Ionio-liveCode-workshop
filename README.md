@@ -14,7 +14,7 @@ to change the state of the program and thus expand it on the fly.
 For this we will use JITLib shipped in SC optimized for _just in time_ programming, which allows the user to interact and interfere to the musical output without having to stop and update the synthesis processes while at run. This allows the performer to improvise and change the state of the sound manipulation dynamically, expanding the
 interaction affordances of the software in real time.
 
-For the workshop we will use examples made in SuperCollider and JITLib, which can be found at this repository (always pay attention to volume while interacting with the running processes). For more information about live coding as performance paradigm see this [[http://toplap.org][page]].
+For the workshop we will use examples made in SuperCollider and JITLib, which can be found at this repository (always pay attention to volume while interacting with the running processes). For more information about live coding as performance paradigm see this <http://toplap.org> page.
 
 ## Examples:
 Define an Ndef, a synthesis proxy!
@@ -41,6 +41,6 @@ The most interesting feature in JITLib is that one can call things that do not e
 #### For other conveniences see this repository and the JITLib Overview help file in SuperCollider
 
 ## Resources and acknowledgements
-+ Download SuperCollider (latest stable) [[http://supercollider.github.io][here]].
-+ [[http://doc.sccode.org/Overviews/JITLib.html][JITLib]] mainly created by Julian Rohrhuber, with contributions by Alberto De Campo.
-+ [[http://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.682112][Chapter]] on live Coding of my PhD thesis including historical and recent practices (groups, software, etc.).
++ Download SuperCollider (latest stable) http://supercollider.github.io
++ http://doc.sccode.org/Overviews/JITLib.html JITLib mainly created by Julian Rohrhuber, with contributions by Alberto De Campo.
++ http://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.682112 Chapter on live Coding of my PhD thesis including historical and recent practices (groups, software, etc.).
