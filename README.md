@@ -25,12 +25,19 @@ information about live coding as performance paradigm see this [[http://toplap.o
 Define an Ndef, a synthesis proxy!
 `
 Ndef(\x).fadeTime = 2;
+
 Ndef(\x).play;
+
 Ndef(\x, {SinOsc.ar(\freq.kr(120.0, 0.3)) * 0.1 });
+
 Ndef(\x, {SinOsc.ar([\freq.kr(120.0), \freq.kr + 2.01]) / 2 * 0.1});
+
 Ndef(\x, {LFSaw.ar([\freq.kr(120.0), \freq.kr + 2.01]) / 2 * 0.1});
+
 Ndef(\x, {LFSaw.ar([\freq.kr(120.0), \freq.kr + 2.01]) / 2 * Linen.kr(Impulse.kr(\speed.kr(1)))});
+
 // Make an Ndef mixer to control the node definitions via a GUI
+
 NdefMixer(s);
 `
 The most interesting thing in JITlib is that one can call things that do not exist as long as they are created later!/
