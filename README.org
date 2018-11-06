@@ -19,6 +19,7 @@ for the development of music software and interactive applications. Examples
 made in SuperCollider, can be found at this repository (always pay
 attention to volume while interacting with the running processes). For more
 information about live coding as performance paradigm see this [[http://toplap.org][page]].
+
 ## Examples:
 Define an Ndef, a synthesis proxy!
 `
