@@ -42,7 +42,7 @@ Ndef(\x, {LFSaw.ar([\freq.kr(120.0), \freq.kr + 2.01]) / 2 * Linen.kr(Impulse.kr
 NdefMixer(s);
 ```
 
-The most interesting thing in JITlib is that one can call things that do not exist as long as they are created later!/
+The most interesting feature in JITLib is that one can call things that do not exist as long as they are created later!/
 #### For other conveniences see this repository and the JITLib Overview help file in SuperCollider
 
 ## Resources and acknowledgements
